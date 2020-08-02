@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>
+            To do Appp
+        </title>
+    </head>
+    <body>
+
+        <h1>List of to do items.</h1>
+        <form action="/addItem/" method="POST">
+            {% csrf_token %}
+            <label for="todoitem">What do you want to do ?</label><br>
+
+            <input type="text" name="todoitem">
+            <input type="submit" value="Add">
+        </form>
+    <ul>
+        {% for todo_item in all_items %}
+             <form action="/delItem/{{todo_item.id}}">
+                <li>{{ todo_item.name }}</li>
+                <input type="submit" value="delete">
+            </form>
+        {% endfor %}
+    </ul>
+
+    </body>
+</html>
