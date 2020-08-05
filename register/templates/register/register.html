@@ -1,0 +1,25 @@
+<h1>Welcome to List it</h1>
+<p>
+    Kindly register to make awesome to lists to simplify your life.
+</p>
+<form action="/register/" method="POST">
+    {% csrf_token %}
+        <!--{{forms.username.label}}
+        {{forms.username}}
+        <br>
+        {{forms.email.label}}
+        {{forms.email}}
+        <br>
+        {{forms.password1.label}}
+        {{forms.password2}}
+        <br>
+        {{forms.password2.label}}
+        {{forms.password2}}
+        -->
+        {{forms.as_p}}
+        <div>
+            {{forms.errors}}
+        </div>
+
+        <input type="submit" name="" id="">
+</form>

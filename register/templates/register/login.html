@@ -1,0 +1,8 @@
+<form action="/loginPage/" method="POST">
+    {% csrf_token %}
+    <label for="email">E-mail:</label>
+    <input type="text" name="email">
+    <label for="passwd">Password:</label>
+    <input type="text" name="passwd">
+    <input type="submit" name="Login" id="">
+</form>

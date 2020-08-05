@@ -1,0 +1,17 @@
+<form action="/addList/" method = "POST">
+    {% csrf_token %}
+    <input type="text" name="list" id="list">
+    <input type="submit" name="ceate" id="list_create">
+</form>
+{% for list in lists %}
+    {{list.name}}
+    <form action="/todoapp/{{list.id}}" method="POST">
+        {% csrf_token %}
+        <input type="submit" value = "Add Items" name="add items">
+    </form>
+    <form action="/delList/{{list.id}}" method="POST">
+        {% csrf_token %}
+        <input type="submit" value = "Delete" name="delete">
+    </form>
+   
+{% endfor %}    
