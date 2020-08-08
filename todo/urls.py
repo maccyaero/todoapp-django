@@ -21,16 +21,11 @@ from register import views as register_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('todoapp/<int:list_id>', views.todoapp, name ='todoapp_home'),
-    path('addItem/', views.addItem, name ='todoapp_add'),
+    path('addItem/<int:list_id>', views.addItem, name ='todoapp_add'),
     path('delItem/<int:todo_id>', views.delItem, name ='todoapp_del'),
     path('delList/<int:list_id>', views.delList, name ='todoapp_delList'),
     path('', register_views.register,name='todoapp-register'),
     path('loginPage/',register_views.loginPage,name='todoapp-login'),
     path('createList/',views.createList,name='todoapp-createList'),
     path('addList/',views.addList,name='todoapp-addList'),
-
-
-    
-
-
 ]

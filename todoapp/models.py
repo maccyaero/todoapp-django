@@ -23,4 +23,6 @@ class ListItem(models.Model):
 class List(models.Model):
     name = models.CharField(max_length=100)
     date_created = models.DateTimeField(default=timezone.now)
-    user_id = models.ForeignKey(User,on_delete=models.CASCADE)    
+    user_id = models.ForeignKey(User,on_delete=models.CASCADE)
+    def __str__(self):
+        return self.name    

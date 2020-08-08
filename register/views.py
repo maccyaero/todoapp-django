@@ -28,7 +28,7 @@ def loginPage(request):
         user = authenticate(request,username = username,password = password)
         if user is not None:
             login(request, user)
-            return redirect('todoapp_home')
+            return redirect('todoapp-createList')
         
     context = {}
     return render(request, 'register/login.html',context)
